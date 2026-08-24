@@ -1,0 +1,5 @@
+settlement_id,payment_id,settlement_amount,settlement_date,status
+SET001,PAY001,5000,2026-08-21,Settled
+SET002,PAY002,3000,2026-08-21,Settled
+SET003,PAY003,7500,2026-08-21,Settled
+SET004,PAY004,5700,2026-08-21,Settled

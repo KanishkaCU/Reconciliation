@@ -1,0 +1,5 @@
+payment_id,invoice_id,customer_id,payment_amount,payment_date,payment_method,status
+PAY001,INV001,C001,5000,2026-08-20,UPI,Success
+PAY002,INV002,C002,3000,2026-08-20,UPI,Success
+PAY003,INV003,C003,7500,2026-08-20,Card,Success
+PAY004,INV004,C004,6000,2026-08-20,UPI,Success
