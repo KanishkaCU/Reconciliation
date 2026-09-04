@@ -1,0 +1,31 @@
+invoice_id,invoice_amount,payment_amount,settlement_amount,result,difference,severity,explanation,recommended_action
+INV071,1000,900.0,900.0,PAYMENT_MISMATCH,100.0,LOW,Payment amount differs from invoice by ₹100.00.,Review the invoice and payment records and verify the payment amount.
+INV072,2500,2000.0,2000.0,PAYMENT_MISMATCH,500.0,HIGH,Payment amount differs from invoice by ₹500.00.,Review the invoice and payment records and verify the payment amount.
+INV073,2000,1500.0,1500.0,PAYMENT_MISMATCH,500.0,HIGH,Payment amount differs from invoice by ₹500.00.,Review the invoice and payment records and verify the payment amount.
+INV074,10000,9800.0,9800.0,PAYMENT_MISMATCH,200.0,MEDIUM,Payment amount differs from invoice by ₹200.00.,Review the invoice and payment records and verify the payment amount.
+INV075,1500,1200.0,1200.0,PAYMENT_MISMATCH,300.0,MEDIUM,Payment amount differs from invoice by ₹300.00.,Review the invoice and payment records and verify the payment amount.
+INV076,7500,7400.0,7400.0,PAYMENT_MISMATCH,100.0,LOW,Payment amount differs from invoice by ₹100.00.,Review the invoice and payment records and verify the payment amount.
+INV077,1500,1000.0,1000.0,PAYMENT_MISMATCH,500.0,HIGH,Payment amount differs from invoice by ₹500.00.,Review the invoice and payment records and verify the payment amount.
+INV078,5000,4800.0,4800.0,PAYMENT_MISMATCH,200.0,MEDIUM,Payment amount differs from invoice by ₹200.00.,Review the invoice and payment records and verify the payment amount.
+INV079,2500,2000.0,2000.0,PAYMENT_MISMATCH,500.0,HIGH,Payment amount differs from invoice by ₹500.00.,Review the invoice and payment records and verify the payment amount.
+INV080,7500,7200.0,7200.0,PAYMENT_MISMATCH,300.0,MEDIUM,Payment amount differs from invoice by ₹300.00.,Review the invoice and payment records and verify the payment amount.
+INV081,2500,2500.0,2000.0,SETTLEMENT_MISMATCH,500.0,HIGH,Settlement amount differs from payment by ₹500.00.,Verify the settlement amount against the payment record.
+INV082,1500,1500.0,1400.0,SETTLEMENT_MISMATCH,100.0,LOW,Settlement amount differs from payment by ₹100.00.,Verify the settlement amount against the payment record.
+INV083,2500,2500.0,2000.0,SETTLEMENT_MISMATCH,500.0,HIGH,Settlement amount differs from payment by ₹500.00.,Verify the settlement amount against the payment record.
+INV084,10000,10000.0,9500.0,SETTLEMENT_MISMATCH,500.0,HIGH,Settlement amount differs from payment by ₹500.00.,Verify the settlement amount against the payment record.
+INV085,2000,2000.0,1900.0,SETTLEMENT_MISMATCH,100.0,LOW,Settlement amount differs from payment by ₹100.00.,Verify the settlement amount against the payment record.
+INV086,3000,3000.0,2700.0,SETTLEMENT_MISMATCH,300.0,MEDIUM,Settlement amount differs from payment by ₹300.00.,Verify the settlement amount against the payment record.
+INV087,10000,10000.0,9800.0,SETTLEMENT_MISMATCH,200.0,MEDIUM,Settlement amount differs from payment by ₹200.00.,Verify the settlement amount against the payment record.
+INV088,2500,2500.0,2400.0,SETTLEMENT_MISMATCH,100.0,LOW,Settlement amount differs from payment by ₹100.00.,Verify the settlement amount against the payment record.
+INV089,5000,,,MISSING_PAYMENT,,HIGH,No payment record was found for this invoice.,Check payment gateway or bank records for the missing payment.
+INV090,1000,,,MISSING_PAYMENT,,HIGH,No payment record was found for this invoice.,Check payment gateway or bank records for the missing payment.
+INV091,10000,,,MISSING_PAYMENT,,HIGH,No payment record was found for this invoice.,Check payment gateway or bank records for the missing payment.
+INV092,2000,,,MISSING_PAYMENT,,HIGH,No payment record was found for this invoice.,Check payment gateway or bank records for the missing payment.
+INV093,1500,,,MISSING_PAYMENT,,HIGH,No payment record was found for this invoice.,Check payment gateway or bank records for the missing payment.
+INV094,1500,1500.0,,MISSING_SETTLEMENT,,MEDIUM,"Payment exists, but no settlement record was found.",Check settlement processing status and verify whether the payment was settled.
+INV095,2500,2500.0,,MISSING_SETTLEMENT,,MEDIUM,"Payment exists, but no settlement record was found.",Check settlement processing status and verify whether the payment was settled.
+INV096,2500,2500.0,,MISSING_SETTLEMENT,,MEDIUM,"Payment exists, but no settlement record was found.",Check settlement processing status and verify whether the payment was settled.
+INV097,1000,1000.0,,MISSING_SETTLEMENT,,MEDIUM,"Payment exists, but no settlement record was found.",Check settlement processing status and verify whether the payment was settled.
+INV098,7500,,,INVALID_REFERENCE,,HIGH,The payment references an incorrect invoice.,Investigate the payment reference and identify the correct invoice.
+INV099,5000,,,INVALID_REFERENCE,,HIGH,The payment references an incorrect invoice.,Investigate the payment reference and identify the correct invoice.
+INV100,5000,,,INVALID_REFERENCE,,HIGH,The payment references an incorrect invoice.,Investigate the payment reference and identify the correct invoice.
