@@ -19,7 +19,7 @@ st.set_page_config(
 # ==================================================
 
 st.title(
-    "💰 Financial Reconciliation Agent"
+    "Financial Reconciliation Agent"
 )
 
 st.write(
@@ -33,7 +33,7 @@ st.write(
 # ==================================================
 
 st.subheader(
-    "📁 Financial Data"
+    "Financial Data"
 )
 
 data_option = st.radio(
@@ -80,21 +80,21 @@ else:
     with col1:
 
         invoice_file = st.file_uploader(
-            "📄 Upload Invoices CSV",
+            "Upload Invoices CSV",
             type=["csv"]
         )
 
     with col2:
 
         payment_file = st.file_uploader(
-            "💳 Upload Payments CSV",
+            "Upload Payments CSV",
             type=["csv"]
         )
 
     with col3:
 
         settlement_file = st.file_uploader(
-            "🏦 Upload Settlements CSV",
+            "Upload Settlements CSV",
             type=["csv"]
         )
 
@@ -132,7 +132,7 @@ else:
 # ==================================================
 
 if st.button(
-    "▶️ Run Reconciliation",
+    "Run Reconciliation",
     type="primary"
 ):
 
@@ -245,7 +245,7 @@ with col5:
 st.divider()
 
 st.subheader(
-    "📊 Exception Analysis"
+    "Exception Analysis"
 )
 
 exception_types = [
@@ -300,7 +300,7 @@ st.dataframe(
 st.divider()
 
 st.subheader(
-    "🚨 Highest Priority Exceptions"
+    "Highest Priority Exceptions"
 )
 
 priority_data = exceptions.dropna(
@@ -343,7 +343,7 @@ else:
 
 st.divider()
 
-st.subheader("🤖 Finance Agent")
+st.subheader("Finance Agent")
 
 st.write(
     "Ask questions about the current reconciliation results."
@@ -369,7 +369,7 @@ if question:
 
 st.divider()
 
-st.subheader("🚨 High Priority Exceptions")
+st.subheader("High Priority Exceptions")
 
 high_priority = exceptions[
     exceptions["severity"] == "HIGH"
@@ -407,14 +407,14 @@ else:
 
 st.divider()
 
-st.subheader("📥 Export Reports")
+st.subheader("Export Reports")
 
 csv_data = exception_report.to_csv(
     index=False
 ).encode("utf-8")
 
 st.download_button(
-    label="📥 Download Exception Report",
+    label="Download Exception Report",
     data=csv_data,
     file_name="financial_exception_report.csv",
     mime="text/csv"
