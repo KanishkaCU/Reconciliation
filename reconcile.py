@@ -3,9 +3,9 @@ import pandas as pd
 
 def reconcile_data(invoices, payments, settlements):
 
-    # --------------------------------------------------
+      
     # STEP 1: Identify payments by customer
-    # --------------------------------------------------
+      
 
     payment_by_customer = (
         payments.groupby("customer_id")["payment_id"]
@@ -13,9 +13,9 @@ def reconcile_data(invoices, payments, settlements):
         .to_dict()
     )
 
-    # --------------------------------------------------
+      
     # STEP 2: Merge invoices with payments
-    # --------------------------------------------------
+      
 
     reconciliation = invoices.merge(
         payments,
@@ -30,9 +30,9 @@ def reconcile_data(invoices, payments, settlements):
         how="left"
     )
 
-    # --------------------------------------------------
+      
     # STEP 3: Reconciliation rules
-    # --------------------------------------------------
+      
 
     def check_transaction(row):
 
@@ -61,9 +61,9 @@ def reconcile_data(invoices, payments, settlements):
         axis=1
     )
 
-    # --------------------------------------------------
+      
     # STEP 4: Explanations
-    # --------------------------------------------------
+      
 
     def explain_transaction(row):
 
@@ -116,9 +116,9 @@ def reconcile_data(invoices, payments, settlements):
         axis=1
     )
 
-    # --------------------------------------------------
+      
     # STEP 5: Recommended action
-    # --------------------------------------------------
+      
 
     def recommend_action(row):
 
@@ -166,17 +166,17 @@ def reconcile_data(invoices, payments, settlements):
         )
     )
 
-    # --------------------------------------------------
+      
     # STEP 6: Exception report
-    # --------------------------------------------------
+      
 
     exceptions = reconciliation[
         reconciliation["result"] != "MATCHED"
     ].copy()
 
-    # --------------------------------------------------
+      
     # STEP 7: Financial difference
-    # --------------------------------------------------
+      
 
     def calculate_difference(row):
 
@@ -201,9 +201,9 @@ def reconcile_data(invoices, payments, settlements):
         axis=1
     )
 
-    # --------------------------------------------------
+      
     # STEP 8: Assign severity
-    # --------------------------------------------------
+      
 
     def calculate_severity(row):
 
@@ -240,9 +240,9 @@ def reconcile_data(invoices, payments, settlements):
         axis=1
     )
 
-    # --------------------------------------------------
+      
     # STEP 9: Select report columns
-    # --------------------------------------------------
+      
 
     exception_report = exceptions[
         [
@@ -261,9 +261,9 @@ def reconcile_data(invoices, payments, settlements):
     return reconciliation, exception_report
 
 
-# ==================================================
+ 
 # COMMAND-LINE EXECUTION
-# ==================================================
+ 
 
 if __name__ == "__main__":
 
@@ -285,9 +285,9 @@ if __name__ == "__main__":
         settlements
     )
 
-    # --------------------------------------------------
+      
     # Display results
-    # --------------------------------------------------
+      
 
     print("\nRECONCILIATION RESULTS\n")
 
@@ -304,9 +304,9 @@ if __name__ == "__main__":
         ].to_string(index=False)
     )
 
-    # --------------------------------------------------
+      
     # Summary
-    # --------------------------------------------------
+      
 
     total_records = len(reconciliation)
 
@@ -331,9 +331,9 @@ if __name__ == "__main__":
     print(f"Match rate      : {match_rate:.2f}%")
     print("-----------------------------")
 
-    # --------------------------------------------------
+      
     # Save exception report
-    # --------------------------------------------------
+      
 
     exception_report.to_csv(
         "data/exception_report.csv",

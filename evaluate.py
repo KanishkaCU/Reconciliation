@@ -9,9 +9,9 @@ payments = pd.read_csv("data/payments.csv")
 settlements = pd.read_csv("data/settlements.csv")
 
 
-# --------------------------------------------------
+  
 # Recreate the reconciliation logic
-# --------------------------------------------------
+  
 
 payment_by_customer = (
     payments.groupby("customer_id")["payment_id"]
@@ -61,9 +61,9 @@ reconciliation["predicted_result"] = reconciliation.apply(
 )
 
 
-# --------------------------------------------------
+  
 # Compare with ground truth
-# --------------------------------------------------
+  
 
 evaluation = ground_truth.merge(
     reconciliation[["invoice_id", "predicted_result"]],
@@ -78,9 +78,9 @@ evaluation["correct"] = (
 )
 
 
-# --------------------------------------------------
+  
 # Calculate accuracy
-# --------------------------------------------------
+  
 
 total = len(evaluation)
 
@@ -109,9 +109,9 @@ print(
 )
 
 
-# --------------------------------------------------
+  
 # Show incorrect predictions
-# --------------------------------------------------
+  
 
 incorrect = evaluation[
     evaluation["correct"] == False

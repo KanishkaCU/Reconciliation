@@ -2,9 +2,9 @@ import streamlit as st
 import pandas as pd
 from reconcile import reconcile_data
 import finance_agent as fa
-# ==================================================
+
 # PAGE CONFIGURATION
-# ==================================================
+ 
 
 st.set_page_config(
     page_title="Financial Reconciliation Agent",
@@ -14,9 +14,9 @@ st.set_page_config(
 
 
 
-# ==================================================
+ 
 # HEADER
-# ==================================================
+ 
 
 st.title(
     "Financial Reconciliation Agent"
@@ -28,9 +28,9 @@ st.write(
 )
 
 
-# ==================================================
+ 
 # DATA SOURCE
-# ==================================================
+ 
 
 st.subheader(
     "Financial Data"
@@ -46,9 +46,9 @@ data_option = st.radio(
 )
 
 
-# ==================================================
+ 
 # DEMO DATA
-# ==================================================
+ 
 
 if data_option == "Use Demo Data":
 
@@ -69,9 +69,9 @@ if data_option == "Use Demo Data":
     )
 
 
-# ==================================================
+ 
 # UPLOAD DATA
-# ==================================================
+ 
 
 else:
 
@@ -127,9 +127,9 @@ else:
     )
 
 
-# ==================================================
+ 
 # RUN RECONCILIATION
-# ==================================================
+ 
 
 if st.button(
     "Run Reconciliation",
@@ -146,9 +146,9 @@ if st.button(
     st.session_state["result"] = exception_report
 
 
-# ==================================================
+ 
 # SHOW RESULTS
-# ==================================================
+ 
 
 if "reconciliation" not in st.session_state:
 
@@ -165,9 +165,9 @@ exception_report = st.session_state["result"]
 result = reconciliation
 exceptions = exception_report
 
-# ==================================================
+ 
 # METRICS
-# ==================================================
+ 
 
 total_records = len(result)
 
@@ -194,9 +194,9 @@ total_discrepancy = measurable[
 ].abs().sum()
 
 
-# ==================================================
+ 
 # KPI CARDS
-# ==================================================
+ 
 
 st.divider()
 
@@ -238,9 +238,9 @@ with col5:
     )
 
 
-# ==================================================
+ 
 # EXCEPTION BREAKDOWN
-# ==================================================
+ 
 
 st.divider()
 
@@ -293,9 +293,9 @@ st.dataframe(
 )
 
 
-# ==================================================
+ 
 # PRIORITY EXCEPTIONS
-# ==================================================
+ 
 
 st.divider()
 
@@ -337,9 +337,9 @@ else:
         "No measurable financial exceptions."
     )
 
-# ==================================================
+ 
 # FINANCE AGENT
-# ==================================================
+ 
 
 st.divider()
 
@@ -363,9 +363,9 @@ if question:
 
     st.info(answer)
 
-# ==================================================
+ 
 # HIGH PRIORITY EXCEPTIONS
-# ==================================================
+ 
 
 st.divider()
 
@@ -401,9 +401,9 @@ else:
     st.success(
         "No high-priority exceptions found."
     )
-# ==================================================
+ 
 # DOWNLOAD EXCEPTION REPORT
-# ==================================================
+ 
 
 st.divider()
 

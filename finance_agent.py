@@ -9,16 +9,16 @@ def finance_agent(question):
 
     question = question.lower().strip()
 
-    # -----------------------------------------
+    
     # 1. Total exceptions
-    # -----------------------------------------
+    
 
     if "how many exceptions" in question:
         return f"There are {len(report)} exceptions requiring attention."
 
-    # -----------------------------------------
+   
     # 2. Missing payments
-    # -----------------------------------------
+    
 
     if "missing payment" in question:
         data = report[
@@ -29,9 +29,9 @@ def finance_agent(question):
             f"There are {len(data)} missing payment records."
         )
 
-    # -----------------------------------------
+    
     # 3. Payment mismatches
-    # -----------------------------------------
+    
 
     if "payment mismatch" in question:
         data = report[
@@ -46,9 +46,9 @@ def finance_agent(question):
             f"₹{total_difference:.2f}."
         )
 
-    # -----------------------------------------
+    
     # 4. Settlement mismatches
-    # -----------------------------------------
+    
 
     if "settlement mismatch" in question:
         data = report[
@@ -63,10 +63,9 @@ def finance_agent(question):
             f"₹{total_difference:.2f}."
         )
 
-    # -----------------------------------------
+    
     # 5. Invalid references
-    # -----------------------------------------
-
+    
     if "invalid reference" in question:
         data = report[
             report["result"] == "INVALID_REFERENCE"
@@ -76,9 +75,9 @@ def finance_agent(question):
             f"There are {len(data)} invalid payment references."
         )
 
-    # -----------------------------------------
+    
     # 6. Total financial discrepancy
-    # -----------------------------------------
+    
 
     if (
         "discrepancy" in question
@@ -98,10 +97,9 @@ def finance_agent(question):
             f"₹{total_difference:.2f}."
         )
 
-    # -----------------------------------------
+   
     # 7. Highest priority exceptions
-    # -----------------------------------------
-
+    
     if (
     "biggest" in question
     or "largest" in question
@@ -147,9 +145,9 @@ def finance_agent(question):
             )
 
         return answer
-        # -----------------------------------------
+        
     # High priority count
-    # -----------------------------------------
+   
 
     if (
         "how many high priority" in question
@@ -166,9 +164,9 @@ def finance_agent(question):
         )
 
 
-    # -----------------------------------------
+   
     # Show high priority exceptions
-    # -----------------------------------------
+    
 
     if (
         "show high priority" in question
@@ -205,9 +203,9 @@ def finance_agent(question):
         return answer
 
 
-    # -----------------------------------------
+    
     # Severity question for specific invoice
-    # -----------------------------------------
+    
 
     if "severity" in question and "inv" in question:
 
@@ -245,9 +243,9 @@ def finance_agent(question):
             )
 
 
-    # -----------------------------------------
+    
     # Recommended action for invoice
-    # -----------------------------------------
+    
 
     if (
         ("what should" in question
@@ -289,9 +287,9 @@ def finance_agent(question):
                 f"action is: {row['recommended_action']}"
             )
 
-    # -----------------------------------------
+    
     # 8. Specific invoice
-    # -----------------------------------------
+    
 
     if "inv" in question:
 
@@ -329,9 +327,9 @@ def finance_agent(question):
                 f"Explanation: {row['explanation']}"
             )
 
-    # -----------------------------------------
+    
     # 9. Default response
-    # -----------------------------------------
+    
 
     return (
         "I can answer questions about exceptions, "
@@ -342,9 +340,9 @@ def finance_agent(question):
     )
 
 
-# ---------------------------------------------
+
 # Interactive agent
-# ---------------------------------------------
+
 
 print("\n======================================")
 print("     FINANCIAL RECONCILIATION AGENT")
